@@ -1,0 +1,6 @@
+[requires]
+nlohmann_json/3.7.3
+fmt/6.1.1
+
+[generators]
+cmake
