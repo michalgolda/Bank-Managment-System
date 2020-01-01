@@ -121,3 +121,20 @@ void Bank::deposit(int phoneNumber, int amount)
 
 	f_w.close();
 }
+
+
+void Bank::withdraw(int phoneNumber, int amount)
+{
+	std::ifstream f_r(fmt::format("{}.json", phoneNumber));
+
+	json j;
+	f_r >> j;
+
+	float f_amount = j["balance"];
+	j["balance"] = f_amount - amount;
+
+	std::ofstream f_w(fmt::format("{}.json", phoneNumber)); 
+	f_w << j;
+
+	f_w.close();
+}

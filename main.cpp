@@ -142,6 +142,7 @@ int main()
 						cout << "2. Delete account" << endl;
 						cout << "3. Transfer money" << endl;
 						cout << "4. Deposit" << endl;
+						cout << "5. Withdraw" << endl;
 						cin >> option;
 
 						if(option == 1)
@@ -205,6 +206,20 @@ int main()
  							bank.deposit(account_details["phoneNumber"], amount);
 
  							cout << "Success." << endl;
+
+ 							sleep(1);
+
+ 							continue;
+ 						} else if(option == 5)
+ 						{
+ 							int amount;
+
+ 							cout << "Amount: ";
+ 							cin >> amount;
+
+ 							bank.withdraw(account_details["phoneNumber"], amount);
+
+ 							cout << "Sucess!" << endl;
 
  							sleep(1);
 
